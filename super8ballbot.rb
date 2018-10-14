@@ -39,6 +39,9 @@ Telegram::Bot::Client.run(TOKEN) do |bot|
 			bot.api.send_message(chat_id: message.chat.id, text: "Здравствуй, #{message.from.first_name}")
 		else
 			bot.api.send_message(chat_id: message.chat.id, text: ANSWERS.sapmle)
+		when '/stop'
+		      bot.api.send_message(chat_id: message.chat.id, text: "Досвидание, #{message.from.first_name}")
+		    end
 		end
 	end
 end
