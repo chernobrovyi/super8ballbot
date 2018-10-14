@@ -1,4 +1,4 @@
-requier 'telegram/bot'
+require 'telegram/bot'
 
 TOKEN = '663967371:AAFbkckpahFSA6s2mMWfCrc5zR45JcG7ANk'
 
@@ -38,10 +38,7 @@ Telegram::Bot::Client.run(TOKEN) do |bot|
 		when '/start'
 			bot.api.send_message(chat_id: message.chat.id, text: "Здравствуй, #{message.from.first_name}")
 		else
-			bot.api.send_message(chat_id: message.chat.id, text: ANSWERS.sapmle)
-		when '/stop'
-		      bot.api.send_message(chat_id: message.chat.id, text: "Досвидание, #{message.from.first_name}")
-		    end
+			bot.api.send_message(chat_id: message.chat.id, text: ANSWERS.sample)
 		end
 	end
 end
